@@ -1,0 +1,31 @@
+
+/*
+  Bootstrap nav-pill theme
+  - nav-tabswitch
+*/
+.nav-pills.nav-tabswitch {
+  background-color: #F0F5F8;
+  border-radius: 0.5rem;
+  height: 40px;  
+}
+
+.nav-pills.nav-tabswitch .nav-link {  
+  border-radius: 0.5rem;
+  height: 34px;
+  color: rgb(71 85 105);
+  font-size: 14px;
+  line-height: 14px;
+}
+.nav-pills.nav-tabswitch .nav-link.active {
+  font-weight: 600;
+  background-color: #FFFFFF;
+  color: rgb(15 23 42);  
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
+}
+.nav-pills.nav-tabswitch .nav-link.active .fal,
+.nav-pills.nav-tabswitch .nav-link.active .far,
+.nav-pills.nav-tabswitch .nav-link.active .fad,
+.nav-pills.nav-tabswitch .nav-link.active .fas {
+  color: rgb(14, 165, 233);
+}
+
