@@ -10,4 +10,5 @@ When using a nav-pill we can receive a different CSS for how it looks
 # Tables
 ## table-soft
 <img src="/bootstrap-5-extras/images/table-soft.png">
-`<table class="table bg-soft table-border shadow-shorter rounded-3">`
+
+```<table class="table bg-soft table-border shadow-shorter rounded-3">```
