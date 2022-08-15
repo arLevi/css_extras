@@ -29,3 +29,28 @@
   color: rgb(14, 165, 233);
 }
 
+
+/*
+    Bootstrap 5.x
+    - Tables
+*/
+table.bg-soft {
+    font-size: 0.8rem;
+    border-collapse: separate !important;
+    border-spacing: 0;
+}
+table.bg-soft.table-border {
+    border: 1px solid #DCE0E4;
+}
+table.bg-soft thead {
+    background: #F8FBFB;
+    color: #101927;
+}
+table.bg-soft tr th,
+table.bg-soft tr td {
+    padding: 1rem;
+}
+table.bg-soft tbody {
+    background: #FEFFFE;
+}
+
