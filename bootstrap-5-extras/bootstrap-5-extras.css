@@ -35,22 +35,104 @@
     - Tables
 */
 table.bg-soft {
-    font-size: 0.8rem;
-    border-collapse: separate !important;
-    border-spacing: 0;
+  font-size: 0.8rem;
+  border-collapse: separate !important;
+  border-spacing: 0;
 }
 table.bg-soft.table-border {
-    border: 1px solid #DCE0E4;
+  border: 1px solid #DCE0E4;
 }
 table.bg-soft thead {
-    background: #F8FBFB;
-    color: #101927;
+  background: #F8FBFB;
+  color: #101927;
+  font-size: 0.9rem;
 }
-table.bg-soft tr th,
-table.bg-soft tr td {
-    padding: 1rem;
+table.bg-soft tr th {
+  padding: 0.8rem;
 }
 table.bg-soft tbody {
-    background: #FEFFFE;
+  background: white;
+}
+table.bg-soft tbody tr {
+  border-color: #E5E7EA;  
 }
 
+table.bg-soft.table-hover tbody tr:hover,
+table.bg-soft.table-hover tbody tr:hover td,
+table.bg-soft.table-hover tbody tr:hover th {
+  background-color: #F8FBFB;
+  --bs-table-accent-bg: #F8FBFB;
+}
+
+table.bg-soft.table-hover tbody tr:hover input {
+  transition: color 0.25s;
+  border: 1px solid #DCE0E4;
+}
+
+/*
+  Bootstrap 5.x
+  - Badges colors
+*/
+.bg-purple {
+  background-color: #667DEA;
+  color: #EBF5FE;
+}
+.bg-gray-flip {
+  background-color: #EDF2F6;
+  color: #4B5467;                
+}
+.bg-gray {
+  background-color: rgb(61, 68, 81);
+  color: #F9FBFB;
+}
+.bg-green-light {
+  background-color: #EDFDFA;
+  color: #309695;
+}
+.bg-green-dark {
+  background-color: #DCFDE7;
+  color: #166434;
+}
+.bg-red {
+  background-color: #FFF5F5;
+  color: #F56565
+}
+.bg-pink {
+  background-color: #FF3464;
+  color: #FEFFFE;
+}
+
+/*
+  Bootstrap 5.x
+  - Page Headings
+*/
+.header-soft {
+  background-color: #FFFFFF;
+  color: #181B27;                
+}           
+.header-soft p {
+  color: #656A75;
+  font-size: 14px;
+  margin: 0;
+}
+.header-soft h1,
+.header-soft h2,
+.header-soft h3,
+.header-soft h4,
+.header-soft h5,
+.header-soft h6 {
+  margin: 0;
+}
+.header-soft .header-body {
+  padding: 20px 25px;
+}
+
+.header-soft footer {
+  margin-top: 10px;
+  height: 50px;
+  line-height: 50px;
+  color: #888D99;
+  font-size: 14px;                
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
