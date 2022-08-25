@@ -21,6 +21,7 @@ When using a nav-pill we can receive a different CSS for how it looks
 
 # Switches
 <img src="/bootstrap-5-extras/images/switches.png">
+
 ```
 <div class="form-check form-switch">
     <input class="form-check-input switch-blue-3" type="checkbox" role="switch" id="switch-blue-3" checked>
