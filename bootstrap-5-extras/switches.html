@@ -1,0 +1,147 @@
+<html>
+    <head>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <link href="./bootstrap-5-extras.css" rel="stylesheet" />
+
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+        <style>
+            .form-check-input:checked.switch-gray   { background-color: #313A46; border-color: #313A46;}
+            .form-check-input:checked.switch-purple { background-color: #737CF4; border-color: #737CF4;}
+            .form-check-input:checked.switch-pink-1 { background-color: #ffe5ec; border-color: #ffe5ec;}
+            .form-check-input:checked.switch-pink-2 { background-color: #ffc2d1; border-color: #ffc2d1;}
+            .form-check-input:checked.switch-pink-3 { background-color: #ffb3c6; border-color: #ffb3c6;}
+            .form-check-input:checked.switch-pink-4 { background-color: #ff8fab; border-color: #ff8fab;}
+            .form-check-input:checked.switch-pink-5 { background-color: #fb6f92; border-color: #fb6f92;}
+            .form-check-input:checked.switch-blue-1 { background-color: #0d47a1; border-color: #0d47a1;}
+            .form-check-input:checked.switch-blue-2 { background-color: #1976d2; border-color: #1976d2;}
+            .form-check-input:checked.switch-blue-3 { background-color: #1e88e5; border-color: #1e88e5;}
+            .form-check-input:checked.switch-blue-4 { background-color: #42a5f5; border-color: #42a5f5;}
+            .form-check-input:checked.switch-blue-5 { background-color: #64b5f6; border-color: #64b5f6;}
+            .form-check-input:checked.switch-blue-6 { background-color: #90caf9; border-color: #90caf9;}
+            .form-check-input:checked.switch-blue-7 { background-color: #bbdefb; border-color: #bbdefb;}
+            .form-check-input:checked.switch-blue-8 { background-color: #e3f2fd; border-color: #e3f2fd;}
+            .form-check-input:checked.switch-cyan-1 { background-color: #0077b6; border-color: #0077b6;}
+            .form-check-input:checked.switch-cyan-2 { background-color: #0096c7; border-color: #0096c7;}
+            .form-check-input:checked.switch-cyan-3 { background-color: #00b4d8; border-color: #00b4d8;}
+            .form-check-input:checked.switch-cyan-4 { background-color: #48cae4; border-color: #48cae4;}
+            .form-check-input:checked.switch-cyan-5 { background-color: #90e0ef; border-color: #90e0ef;}
+            .form-check-input:checked.switch-cyan-6 { background-color: #ade8f4; border-color: #ade8f4;}
+            .form-check-input:checked.switch-cyan-7 { background-color: #caf0f8; border-color: #caf0f8;}
+            .form-check-input:checked.switch-red-1 { background-color: #641220; border-color: #641220;}
+            .form-check-input:checked.switch-red-2 { background-color: #85182a; border-color: #85182a;}
+            .form-check-input:checked.switch-red-3 { background-color: #a71e34; border-color: #a71e34;}
+            .form-check-input:checked.switch-red-4 { background-color: #c71f37; border-color: #c71f37;}
+            .form-check-input:checked.switch-red-5 { background-color: #e01e37; border-color: #e01e37;}
+            .form-check-input:checked.switch-green-1 { background-color: #004b23; border-color: #004b23;}
+            .form-check-input:checked.switch-green-2 { background-color: #007200; border-color: #007200;}
+            .form-check-input:checked.switch-green-3 { background-color: #38b000; border-color: #38b000;}
+            .form-check-input:checked.switch-green-4 { background-color: #70e000; border-color: #70e000;}
+            .form-check-input:checked.switch-green-5 { background-color: #9ef01a; border-color: #9ef01a;}
+            .form-check-input:checked.switch-green-6 { background-color: #ccff33; border-color: #ccff33;}
+            .form-check-input:checked.switch-gray-1 { background-color: #212529; border-color: #212529;}
+            .form-check-input:checked.switch-gray-2 { background-color: #343a40; border-color: #343a40;}
+            .form-check-input:checked.switch-gray-3 { background-color: #495057; border-color: #495057;}
+            .form-check-input:checked.switch-gray-4 { background-color: #6c757d; border-color: #6c757d;}
+            .form-check-input:checked.switch-gray-5 { background-color: #adb5bd; border-color: #adb5bd;}
+            .form-check-input:checked.switch-gray-6 { background-color: #ced4da; border-color: #ced4da;}
+            .form-check-input:checked.switch-gray-7 { background-color: #dee2e6; border-color: #dee2e6;}
+            .form-check-input:checked.switch-gray-8 { background-color: #e9ecef; border-color: #e9ecef;}
+            .form-check-input:checked.switch-yellow-1 { background-color: #ff7b00; border-color: #ff7b00;}
+            .form-check-input:checked.switch-yellow-2 { background-color: #ff8800; border-color: #ff8800;}
+            .form-check-input:checked.switch-yellow-3 { background-color: #ff9500; border-color: #ff9500;}
+            .form-check-input:checked.switch-yellow-4 { background-color: #ffa200; border-color: #ffa200;}
+            .form-check-input:checked.switch-yellow-5 { background-color: #ffaa00; border-color: #ffaa00;}
+            .form-check-input:checked.switch-yellow-6 { background-color: #ffb700; border-color: #ffb700;}
+            .form-check-input:checked.switch-yellow-7 { background-color: #ffc300; border-color: #ffc300;}
+            .form-check-input:checked.switch-yellow-8 { background-color: #ffd000; border-color: #ffd000;}
+            .form-check-input:checked.switch-yellow-9 { background-color: #ffdd00; border-color: #ffdd00;}
+            .form-check-input:checked.switch-yellow-10 { background-color: #ffea00; border-color: #ffea00;}
+            .form-check-input:checked.switch-purple-1 { background-color: #5603ad; border-color: #5603ad;}
+            .form-check-input:checked.switch-purple-2 { background-color: #907ad6; border-color: #907ad6;}
+            .form-check-input:checked.switch-purple-3 { background-color: #a06cd5; border-color: #a06cd5;}
+            .form-check-input:checked.switch-purple-4 { background-color: #3c096c; border-color: #3c096c;}
+            .form-check-input:checked.switch-purple-5 { background-color: #7b2cbf; border-color: #7b2cbf;}
+            .form-check-input:checked.switch-purple-6 { background-color: #9d4edd; border-color: #9d4edd;}
+            .form-check-input:checked.switch-purple-7 { background-color: #c77dff; border-color: #c77dff;}
+            .form-check-input:checked.switch-purple-8 { background-color: #c8b6ff; border-color: #c8b6ff;}
+            .form-check-input:checked.switch-purple-9 { background-color: #e7c6ff; border-color: #e7c6ff;}
+            .form-check-input:checked.switch-purple-10 { background-color: #8e94f2; border-color: #8e94f2;}
+            .form-check-input:checked.switch-purple-11 { background-color: #9fa0ff; border-color: #9fa0ff;}
+            .form-check-input:checked.switch-purple-12 { background-color: #cbb2fe; border-color: #cbb2fe;}
+
+            .form-check-input.switch-size-1 { width: 2.5em; height: 1.5em; }
+            .form-check-input.switch-size-2 { width: 3.0em; height: 2.0em; }            
+            
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">            
+            <div class="row p-5">
+                <div class="col col-md-6 bg-light p-5">                   
+                    <h1>Switches Colors</h1>
+                    <hr>
+
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="switch_default" checked>
+                        <label class="form-check-label" for="switch_default">.switch-default</label>
+                    </div>
+
+                    <div id="fill_switches"></div>
+                </div>          
+
+                <div class="col bg-light p-5">
+                    <h1>Switches Sizes</h1>
+                    <hr>
+
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="default_size" checked>
+                        <label class="form-check-label" for="default_size">(default)</label>
+                    </div>
+
+                    <div class="form-check form-switch">
+                        <input class="form-check-input switch-size-1" type="checkbox" role="switch" id="switch-size-1" checked>
+                        <label class="form-check-label" for="switch-size-1"> .switch-size-1</label>
+                    </div>
+                    
+                    <div class="form-check form-switch">
+                        <input class="form-check-input switch-size-2" type="checkbox" role="switch" id="switch-size-2" checked>
+                        <label class="form-check-label" for="switch-size-2"> .switch-size-2</label>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+    function fill_switches() {
+        let colors = [            
+            "blue-1","blue-2","blue-3","blue-4","blue-5","blue-6","blue-7","blue-8",
+            "cyan-1","cyan-2","cyan-3","cyan-4","cyan-5","cyan-6","cyan-7",
+            "green-1","green-2","green-3","green-4","green-5","green-6",
+            "gray-1","gray-2","gray-3","gray-4","gray-5","gray-6","gray-7","gray-8",
+            "red-1","red-2","red-3","red-4","red-5",
+            "pink-1","pink-2","pink-3","pink-4","pink-5",
+            "yellow-1","yellow-2","yellow-3","yellow-4","yellow-5","yellow-6","yellow-7","yellow-8","yellow-9","yellow-10",
+            "purple-1","purple-2","purple-3","purple-4","purple-5","purple-6","purple-7","purple-8","purple-9","purple-10","purple-11","purple-12",
+            ];
+        let target_el = document.getElementById('fill_switches');
+
+        colors.forEach(value => {            
+            let div = `
+                    <div class="form-check form-switch">
+                        <input class="form-check-input switch-${value}" type="checkbox" role="switch" id="switch-${value}" checked>
+                        <label class="form-check-label" for="switch-${value}">.switch-${value}</label>
+                    </div>`;
+
+            target_el.insertAdjacentHTML('beforeend', div);
+        });
+    }
+
+    window.addEventListener('DOMContentLoaded', (event) => {
+        fill_switches();
+    });
+</script>
