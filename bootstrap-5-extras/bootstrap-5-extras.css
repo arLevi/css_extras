@@ -69,6 +69,15 @@ table.bg-soft.table-hover tbody tr:hover input {
   border: 1px solid #DCE0E4;
 }
 
+
+/*
+  Bootstrap 5.x
+  - Buttons
+*/
+.btn-blue-light       { background-color: #F3F8FF; color: #0F6EFE !important; border: none;}
+.btn-blue-light:hover { background-color: #E8F1FF; color: #0F6EFE; border: none;}
+
+
 /*
   Bootstrap 5.x
   - Badges colors
