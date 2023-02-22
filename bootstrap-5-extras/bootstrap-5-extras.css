@@ -112,6 +112,21 @@ table.bg-soft.table-hover tbody tr:hover input {
 }
 
 /*
+    Avatars
+*/
+.avatar {
+    width: 100px;
+    height: 100px;
+    overflow: hidden; 
+    position: relative;
+    border-radius: 50%;
+}
+.avatar img {
+    width: 100%;
+    height: auto;
+}
+
+/*
   Bootstrap 5.x
   - Page Headings
 */
