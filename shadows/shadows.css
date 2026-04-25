@@ -78,3 +78,8 @@
               0 16px 8px rgba(0,0,0,0.09),
               0 32px 16px rgba(0,0,0,0.09);
 }
+
+/* Clalit */
+.shadow_clalit {
+    box-shadow: 0 4px 24px 0 rgb(45 93 188 / 19%);
+}
