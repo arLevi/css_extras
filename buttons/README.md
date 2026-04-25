@@ -19,4 +19,4 @@ create_btn({ c: "pink", l: "Large & Long Label", h: 60, i: "celebration" });
 create_btn({ c: "orange", l: "Full Width Button", h: 44, i: "width_full", class: "w-full block mt-4"});
 ```
 
-[![N|Solid](https://github.com/arLevi/css_helpers/raw/main/images/chunky_3d_image.png)](https://nodesource.com/products/nsolid)
+[![Images|Demo](https://github.com/arLevi/css_helpers/raw/main/images/chunky_3d_image.png)](https://github.com/arLevi/css_helpers)
