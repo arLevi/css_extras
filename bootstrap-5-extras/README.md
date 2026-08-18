@@ -32,7 +32,7 @@ When using a nav-pill we can receive a different CSS for how it looks
 # Sidebars
 
 ## Example 1 - blue and gray
-The theme change when we click on collapse icon
+The theme change when we click on collapse icon, demo: <a href='https://stackblitz.com/edit/vitejs-vite-hdw4jcqu?file=index.html'>StackBlitz</a>
 
 <img src="/bootstrap-5-extras/images/sidebar-example1.png">
 
