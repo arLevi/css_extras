@@ -29,5 +29,10 @@ When using a nav-pill we can receive a different CSS for how it looks
 </div>
 ```
 
+# Sidebars
 
+## Example 1 - blue and gray
+The theme change when we click on collapse icon
+
+<img src="/bootstrap-5-extras/images/sidebar-example1.png">
 

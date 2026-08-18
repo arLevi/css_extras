@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Collapsible Blue Sidebar</title>
+
+    <!-- Bootstrap 5.3 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <style>
+      /* CSS Variables for Theme Toggling */
+      :root {
+        /* Light Theme (Default) */
+        --sidebar-bg: #f8f9fa;
+        --sidebar-text: #495057;
+        --sidebar-heading: #212529;
+        --sidebar-hover-bg: #e9ecef;
+        --sidebar-hover-text: #212529;
+        --sidebar-active-bg: #e8f0fe;
+        --sidebar-active-text: #1a73e8;
+        --sidebar-border: #dee2e6;
+        --sidebar-divider: rgba(0, 0, 0, 0.1);
+      }
+
+      /* Blue Theme Overrides */
+      .sidebar-blue-theme {
+        --sidebar-bg: #0d6efd;
+        --sidebar-text: rgba(255, 255, 255, 0.8);
+        --sidebar-heading: #ffffff;
+        --sidebar-hover-bg: rgba(255, 255, 255, 0.15);
+        --sidebar-hover-text: #ffffff;
+        --sidebar-active-bg: #ffffff;
+        --sidebar-active-text: #0d6efd;
+        --sidebar-border: #0b5ed7;
+        --sidebar-divider: rgba(255, 255, 255, 0.2);
+      }
+
+      body {
+        overflow-x: hidden;
+      }
+
+      /* Sidebar Base Styles */
+      .sidebar {
+        width: 260px;
+        height: 100vh;
+        background-color: var(--sidebar-bg);
+        border-right: 1px solid var(--sidebar-border);
+        transition: width 0.3s ease, background-color 0.3s ease;
+        color: var(--sidebar-text);
+      }
+
+      .sidebar-brand,
+      .sidebar h6 {
+        color: var(--sidebar-heading);
+      }
+
+      /* Navigation Links */
+      .sidebar .nav-link {
+        color: var(--sidebar-text);
+        border-radius: 4px;
+        margin-bottom: 2px;
+        font-weight: 500;
+        padding: 0.6rem 1rem;
+        white-space: nowrap;
+        transition: all 0.2s ease;
+      }
+
+      .sidebar .nav-link:hover {
+        background-color: var(--sidebar-hover-bg);
+        color: var(--sidebar-hover-text);
+      }
+
+      .sidebar .nav-pills .nav-link.active {
+        background-color: var(--sidebar-active-bg);
+        color: var(--sidebar-active-text);
+      }
+
+      .sidebar .nav-link i {
+        font-size: 1.2rem;
+        vertical-align: text-bottom;
+        margin-right: 12px;
+        transition: margin 0.3s ease;
+      }
+
+      .sidebar hr {
+        border-color: var(--sidebar-divider);
+      }
+
+      /* Utility button styles for the sidebar */
+      .btn-sidebar-outline {
+        color: var(--sidebar-text);
+        border: 1px solid var(--sidebar-divider);
+      }
+      .btn-sidebar-outline:hover {
+        color: var(--sidebar-hover-text);
+        background-color: var(--sidebar-hover-bg);
+      }
+      .btn-toggle-icon {
+        color: var(--sidebar-heading);
+        background: transparent;
+        border: none;
+      }
+
+      /* =========================================
+       COLLAPSED STATE STYLES 
+       ========================================= */
+      .sidebar.collapsed {
+        width: 80px;
+      }
+
+      /* Hide text elements when collapsed */
+      .sidebar.collapsed .hide-on-collapse {
+        display: none !important;
+      }
+
+      /* Center the icons when collapsed */
+      .sidebar.collapsed .nav-link {
+        text-align: center;
+        padding: 0.6rem 0;
+      }
+
+      .sidebar.collapsed .nav-link i {
+        margin-right: 0;
+      }
+
+      /* Adjust headers and buttons when collapsed */
+      .sidebar.collapsed .sidebar-header {
+        justify-content: center !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="d-flex w-100">
+      <!-- Sidebar) -->
+      <div
+        id="mainSidebar"
+        class="sidebar d-flex flex-column p-3 flex-shrink-0"
+      >
+        <!-- Top Header & Collapse Toggle Button -->
+        <div
+          class="sidebar-header d-flex align-items-center justify-content-between mb-3"
+        >
+          <a
+            href="/"
+            class="sidebar-brand d-flex align-items-center text-decoration-none hide-on-collapse px-2"
+          >
+            <i class="bi bi-cloud-fill fs-4 me-2"></i>
+            <span class="fs-5 fw-bold">Cloud Portal</span>
+          </a>
+          <button id="toggleSidebarBtn" class="btn-toggle-icon p-1">
+            <i class="bi bi-list fs-3"></i>
+          </button>
+        </div>
+
+        <hr />
+
+        <!-- Navigation Links -->
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a href="#" class="nav-link" title="Overview">
+              <i class="bi bi-house-door"></i>
+              <span class="hide-on-collapse">Overview</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="#"
+              class="nav-link active"
+              aria-current="page"
+              title="Virtual Machines"
+            >
+              <i class="bi bi-pc-display"></i>
+              <span class="hide-on-collapse">Virtual Machines</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" title="Storage Volumes">
+              <i class="bi bi-hdd-network"></i>
+              <span class="hide-on-collapse">Storage Volumes</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" title="Network">
+              <i class="bi bi-diagram-3"></i>
+              <span class="hide-on-collapse">Network</span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Bottom Actions -->
+        <div class="mt-auto">
+          <!-- User Profile Dropdown -->
+          <div class="dropdown">
+            <a
+              href="#"
+              class="d-flex align-items-center text-decoration-none dropdown-toggle px-2"
+              style="color: var(--sidebar-heading)"
+              id="dropdownUser"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="bi bi-person-circle fs-4"></i>
+              <strong class="hide-on-collapse ms-2">Username</strong>
+            </a>
+            <ul
+              class="dropdown-menu text-small shadow"
+              aria-labelledby="dropdownUser"
+            >
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content Area (to show how the sidebar pushes content) -->
+      <div
+        class="flex-grow-1 p-5 bg-light"
+        style="height: 100vh; overflow-y: auto"
+      >
+        <h2 class="mb-4">Virtual Machines (1000 Instances)</h2>
+        <div class="card shadow-sm border-0">
+          <div class="card-body">
+            <p class="text-muted">
+              Click the hamburger icon (<i class="bi bi-list"></i>) in the
+              sidebar to collapse/close it.
+            </p>
+            <p class="text-muted">
+              Click "Flip Color Theme" (<i class="bi bi-palette"></i>) at the
+              bottom to toggle between Blue and Light mode.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap 5.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS for Toggles -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const sidebar = document.getElementById('mainSidebar');
+        const toggleSidebarBtn = document.getElementById('toggleSidebarBtn');
+        const flipColorBtn = document.getElementById('flipColorBtn');
+
+        // 1. Toggle Sidebar Collapse (Close/Open)
+        toggleSidebarBtn.addEventListener('click', function () {
+          sidebar.classList.toggle('collapsed');
+          sidebar.classList.toggle('sidebar-blue-theme');
+        });
+      });
+    </script>
+  </body>
+</html>
+
