@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kids Game Countdown Timers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 20px;
+      background: radial-gradient(circle at 50% 30%, #EFEBE4 0%, #D8D2C6 100%);
+      font-family: system-ui, sans-serif;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      margin-bottom: 5px;
+      font-family: 'Fredoka', sans-serif;
+      color: #2C3E50;
+    }
+
+    .subtitle {
+      margin-bottom: 25px;
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    .controls {
+      margin-bottom: 30px;
+      display: flex;
+      gap: 10px;
+    }
+
+    button {
+      padding: 10px 18px;
+      border: none;
+      border-radius: 12px;
+      background: #2C3E50;
+      color: white;
+      font-weight: bold;
+      font-family: 'Fredoka', sans-serif;
+      cursor: pointer;
+      box-shadow: 0 4px 0 #1A252F;
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+
+    button:active {
+      transform: translateY(3px);
+      box-shadow: 0 1px 0 #1A252F;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .card {
+      background: white;
+      padding: 24px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .card h3 {
+      margin: 0 0 15px 0;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.1rem;
+      color: #34495E;
+    }
+
+    /* --- STYLE 1: Chunky Clay Ring --- */
+    .timer-clay {
+      position: relative;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #FF9EAA, #FF6B8B);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), 0 6px 0px #D84E6C, inset 0 4px 6px rgba(255, 255, 255, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .timer-clay svg {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      transform: rotate(-90deg);
+    }
+    .timer-clay .track { fill: none; stroke: rgba(255,255,255,0.25); stroke-width: 9; }
+    .timer-clay .progress { fill: none; stroke: #4ECDC4; stroke-width: 9; stroke-linecap: round; stroke-dasharray: 377; transition: stroke-dashoffset 0.3s; }
+    .timer-clay .display {
+      position: relative; z-index: 2; width: 88px; height: 88px; border-radius: 50%;
+      background: #FFF9F0; box-shadow: inset 0 3px 5px rgba(0,0,0,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Fredoka', sans-serif; font-size: 2.4rem; font-weight: 700; color: #332C39;
+    }
+
+    /* --- STYLE 2: Sunny Arcade Badge --- */
+    .timer-arcade {
+      position: relative;
+      width: 130px; height: 130px; border-radius: 50%;
+      background: linear-gradient(180deg, #FFD166, #F39C12);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1), 0 6px 0px #D68910, inset 0 3px 5px rgba(255,255,255,0.7);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .timer-arcade svg {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      transform: rotate(-90deg);
+    }
+    .timer-arcade .track { fill: none; stroke: rgba(255,255,255,0.3); stroke-width: 10; }
+    .timer-arcade .progress { fill: none; stroke: #2ECC71; stroke-width: 10; stroke-linecap: round; stroke-dasharray: 377; transition: stroke-dashoffset 0.3s; }
+    .timer-arcade .display {
+      position: relative; z-index: 2; width: 88px; height: 88px; border-radius: 50%;
+      background: #FFFFFF; box-shadow: inset 0 3px 5px rgba(0,0,0,0.08);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Fredoka', sans-serif; font-size: 2.4rem; font-weight: 700; color: #2C3E50;
+    }
+
+    /* --- STYLE 3: Soft Lavender Bubble --- */
+    .timer-lavender {
+      position: relative;
+      width: 130px; height: 130px; border-radius: 50%;
+      background: linear-gradient(145deg, #CDB4DB, #B5838D);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1), 0 6px 0px #9A7B9C, inset 0 4px 6px rgba(255,255,255,0.6);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .timer-lavender svg {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      transform: rotate(-90deg);
+    }
+    .timer-lavender .track { fill: none; stroke: rgba(255,255,255,0.3); stroke-width: 9; }
+    .timer-lavender .progress { fill: none; stroke: #7EE8FA; stroke-width: 9; stroke-linecap: round; stroke-dasharray: 377; transition: stroke-dashoffset 0.3s; }
+    .timer-lavender .display {
+      position: relative; z-index: 2; width: 88px; height: 88px; border-radius: 50%;
+      background: #F9F6FC; box-shadow: inset 0 3px 5px rgba(0,0,0,0.08);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Fredoka', sans-serif; font-size: 2.4rem; font-weight: 700; color: #4A3E4E;
+    }
+
+    /* --- STYLE 4: Sky Blue Adventure --- */
+    .timer-sky {
+      position: relative;
+      width: 130px; height: 130px; border-radius: 50%;
+      background: linear-gradient(145deg, #70A1FF, #1E90FF);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1), 0 6px 0px #104885, inset 0 4px 6px rgba(255,255,255,0.6);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .timer-sky svg {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      transform: rotate(-90deg);
+    }
+    .timer-sky .track { fill: none; stroke: rgba(255,255,255,0.3); stroke-width: 9; }
+    .timer-sky .progress { fill: none; stroke: #FFFA65; stroke-width: 9; stroke-linecap: round; stroke-dasharray: 377; transition: stroke-dashoffset 0.3s; }
+    .timer-sky .display {
+      position: relative; z-index: 2; width: 88px; height: 88px; border-radius: 50%;
+      background: #F0F8FF; box-shadow: inset 0 3px 5px rgba(0,0,0,0.08);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Fredoka', sans-serif; font-size: 2.4rem; font-weight: 700; color: #1B4F72;
+    }
+
+    .warning {
+      animation: wiggle 0.4s ease-in-out infinite;
+    }
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-4deg); }
+      75% { transform: rotate(4deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Kids Game Countdowns</h1>
+  <div class="subtitle">Select your favorite style to integrate into your HTML game</div>
+
+  <div class="controls">
+    <button onclick="restartTimers()">Restart Countdown</button>
+  </div>
+
+  <div class="grid">
+    <!-- Style 1 -->
+    <div class="card">
+      <h3>1. Peach & Mint Clay</h3>
+      <div class="timer-clay" id="timer1">
+        <svg viewBox="0 0 140 140"><circle class="track" cx="70" cy="70" r="60"/><circle class="progress" id="p1" cx="70" cy="70" r="60"/></svg>
+        <div class="display" id="num1">10</div>
+      </div>
+    </div>
+
+    <!-- Style 2 -->
+    <div class="card">
+      <h3>2. Sunny Arcade</h3>
+      <div class="timer-arcade" id="timer2">
+        <svg viewBox="0 0 140 140"><circle class="track" cx="70" cy="70" r="60"/><circle class="progress" id="p2" cx="70" cy="70" r="60"/></svg>
+        <div class="display" id="num2">10</div>
+      </div>
+    </div>
+
+    <!-- Style 3 -->
+    <div class="card">
+      <h3>3. Lavender Bubble</h3>
+      <div class="timer-lavender" id="timer3">
+        <svg viewBox="0 0 140 140"><circle class="track" cx="70" cy="70" r="60"/><circle class="progress" id="p3" cx="70" cy="70" r="60"/></svg>
+        <div class="display" id="num3">10</div>
+      </div>
+    </div>
+
+    <!-- Style 4 -->
+    <div class="card">
+      <h3>4. Sky Blue Adventure</h3>
+      <div class="timer-sky" id="timer4">
+        <svg viewBox="0 0 140 140"><circle class="track" cx="70" cy="70" r="60"/><circle class="progress" id="p4" cx="70" cy="70" r="60"/></svg>
+        <div class="display" id="num4">10</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let timeLeft = 10;
+    const CIRCUMFERENCE = 377; // 2 * Math.PI * 60
+    let timerInterval = null;
+
+    function updateAll() {
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById(`num${i}`).textContent = timeLeft;
+        const progressEl = document.getElementById(`p${i}`);
+        const container = document.getElementById(`timer${i}`);
+        
+        const ratio = timeLeft / 10;
+        progressEl.style.strokeDashoffset = CIRCUMFERENCE * (1 - ratio);
+
+        if (timeLeft <= 3 && timeLeft > 0) {
+          container.classList.add('warning');
+        } else {
+          container.classList.remove('warning');
+        }
+      }
+    }
+
+    function restartTimers() {
+      clearInterval(timerInterval);
+      timeLeft = 10;
+      updateAll();
+      timerInterval = setInterval(() => {
+        timeLeft--;
+        if (timeLeft < 0) {
+          clearInterval(timerInterval);
+          return;
+        }
+        updateAll();
+      }, 1000);
+    }
+
+    restartTimers();
+  </script>
+
+</body>
+</html>
